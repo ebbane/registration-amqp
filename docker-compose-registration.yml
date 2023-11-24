@@ -33,4 +33,4 @@ services:
 
 networks:
   amqp-network:
-    driver: bridge
+    external: true

@@ -28,9 +28,9 @@ public class UserController {
         .body(userService.register(userDto));
   }
 
-  @GetMapping("/action/validation/email/{value}")
-  public String emailConfirmation(@PathVariable String value) {
-    userService.confirmRegistration(value);
+  @GetMapping("/action/validation/{jwt}")
+  public String emailConfirmation(@PathVariable String jwt) {
+    userService.confirmRegistration(jwt);
     return "redirect:/user/confirmation-success";
   }
 

@@ -12,6 +12,6 @@ public interface UserMapper {
 
   UserMb dtoToEntity(UserDto userDto);
 
-  Message mbToMessage(UserMb userMb);
+  Message mbToMessage(UserMb userMb, String jwt);
 
 }

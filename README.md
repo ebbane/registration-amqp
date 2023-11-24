@@ -86,7 +86,7 @@ Instructions à suivre (conseillé) pour le lancement du projet en local.
    ```sh
    cd registration-amqp
    docker network create amqp-network
-   docker-compose up -d
+   docker-compose -f docker-compose-registration.yml up -d
    ```
 
 #### Avec maven

@@ -1,8 +1,8 @@
 package dev.project.amqp.registration.user.model;
 
 public enum UserStatus {
-  CREATED("Created"),
-  EMAIL_VERIFIED("Email Verified");
+  PENDING_VERIFICATION("Pending verification"),
+  VERIFIED("Verified");
 
   private final String label;
 

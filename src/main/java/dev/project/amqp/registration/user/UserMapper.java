@@ -1,7 +1,8 @@
 package dev.project.amqp.registration.user;
 
+import dev.project.amqp.registration.user.model.Message;
 import dev.project.amqp.registration.user.model.UserDto;
-import dev.project.amqp.registration.user.model.UserEntity;
+import dev.project.amqp.registration.user.model.UserMb;
 import org.mapstruct.InjectionStrategy;
 import org.mapstruct.Mapper;
 
@@ -9,6 +10,8 @@ import org.mapstruct.Mapper;
     injectionStrategy = InjectionStrategy.CONSTRUCTOR)
 public interface UserMapper {
 
-  UserEntity dtoToEntity(UserDto userDto);
+  UserMb dtoToEntity(UserDto userDto);
+
+  Message mbToMessage(UserMb userMb);
 
 }

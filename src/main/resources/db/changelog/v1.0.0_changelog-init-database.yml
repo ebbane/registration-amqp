@@ -24,3 +24,7 @@ databaseChangeLog:
               - column:
                   name: status
                   type: TEXT
+        - addUniqueConstraint:
+            columnNames: email
+            constraintName: uc_person_email
+            tableName: person

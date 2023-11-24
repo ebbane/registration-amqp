@@ -1,34 +1,30 @@
-# Compiled class file
-*.class
-
-# Log files
-*.log
-
-# IntelliJ IDEA files
-.idea/
-*.iml
-*.iws
-*.ipr
-# file: ~/.gitignore_global
+# Miscellaneous
+*.java.hsp
+*.sonarj
+*.sw*
 .DS_Store
+build.sh
+integration-repo
+ivy-cache
+argfile*
+activemq-data/
+classes/
+
+.mvn/wrapper
+# Log files
+jxl.log
+jmx.log
+derby.log
+**.log
+# Maven artifacts
+/target/
+
+
+# IDEA artifacts and output dirs
+*.iml
+*.ipr
+*.iws
 .idea
-# Eclipse files
-.settings/
-.classpath
-.project
-
-# Maven
-/target/
-mvnw
-mvnw.cmd
-
-# Gradle
-build/
-.gradle/
-
-Thumbs.db
-
-# Spring Boot
-/target/
-!.mvn/wrapper/maven-wrapper.jar
-mvn
+out
+test-output
+atlassian-ide-plugin.xml

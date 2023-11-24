@@ -2,13 +2,16 @@ package dev.project.amqp.registration.user;
 
 import dev.project.amqp.registration.user.model.UserDto;
 import jakarta.validation.Valid;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@Controller
 @RequestMapping(value = "/user")
 public class UserController {
 
@@ -18,11 +21,22 @@ public class UserController {
     this.userService = userService;
   }
 
-  @PostMapping
+  @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
   public ResponseEntity<Long> createMovie(
       @Valid() @RequestBody() UserDto userDto) {
     return ResponseEntity.ok()
         .body(userService.register(userDto));
+  }
+
+  @GetMapping("/action/validation/email/{value}")
+  public String emailConfirmation(@PathVariable String value) {
+    userService.confirmRegistration(value);
+    return "redirect:/user/confirmation-success";
+  }
+
+  @GetMapping("/confirmation-success")
+  public String confirmationSuccess() {
+    return "confirmation";
   }
 
 }

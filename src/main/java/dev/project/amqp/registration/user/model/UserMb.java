@@ -1,29 +1,11 @@
 package dev.project.amqp.registration.user.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+public class UserMb {
 
-@Entity
-@Table(name = "person")
-public class UserEntity {
-
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
-
-  @Column(nullable = false)
   private String firstname;
-
-  @Column(nullable = false)
   private String lastname;
-  @Column(nullable = false)
   private String email;
-
-  @Column(nullable = false)
   private UserStatus status;
 
   public Long getId() {

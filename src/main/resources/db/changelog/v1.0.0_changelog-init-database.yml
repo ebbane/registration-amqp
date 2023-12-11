@@ -1,0 +1,30 @@
+databaseChangeLog:
+  - changeSet:
+      id: feat-create-table-user
+      author: ediet
+      changes:
+        - createTable:
+            tableName: person
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: firstname
+                  type: TEXT
+              - column:
+                  name: lastname
+                  type: TEXT
+              - column:
+                  name: email
+                  type: TEXT
+              - column:
+                  name: status
+                  type: TEXT
+        - addUniqueConstraint:
+            columnNames: email
+            constraintName: uc_person_email
+            tableName: person
